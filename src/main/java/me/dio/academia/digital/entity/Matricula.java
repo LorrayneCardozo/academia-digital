@@ -18,7 +18,7 @@ public class Matricula {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @OneToOne
+  @OneToOne(cascade = CascadeType.REMOVE)
   private Aluno aluno;
 
   private LocalDateTime dataDaMatricula = LocalDateTime.now();
