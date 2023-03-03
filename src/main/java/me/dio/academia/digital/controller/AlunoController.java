@@ -9,6 +9,7 @@ import me.dio.academia.digital.service.AlunoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -17,16 +18,16 @@ public class AlunoController {
     @Autowired
     private AlunoService alunoService;
 
+    @ApiOperation(value = "Cria um aluno")
+    @PostMapping
+    public Aluno create(@Valid @RequestBody AlunoDTO alunoDTO){
+        return alunoService.create(alunoDTO);
+    }
+
     @ApiOperation(value = "Retorna todos os alunos")
     @GetMapping
     public List<Aluno> getAll() {
         return alunoService.getAll();
-    }
-
-    @ApiOperation(value = "Cria um aluno")
-    @PostMapping
-    public Aluno create(@RequestBody AlunoDTO alunoDTO){
-        return alunoService.create(alunoDTO);
     }
 
     @ApiOperation(value = "Retorna todas as avaliações físicas de um aluno específico")

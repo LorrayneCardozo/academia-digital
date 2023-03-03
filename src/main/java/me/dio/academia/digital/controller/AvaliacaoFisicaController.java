@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/avaliacoes")
 public class AvaliacaoFisicaController {
@@ -17,7 +19,7 @@ public class AvaliacaoFisicaController {
     private AvaliacaoFisicaService avaliacaoFisicaService;
 
     @PostMapping
-    public AvaliacaoFisica create(@RequestBody AvaliacaoFisicaDTO avaliacaoFisicaDTO) {
+    public AvaliacaoFisica create(@Valid @RequestBody AvaliacaoFisicaDTO avaliacaoFisicaDTO) {
         return avaliacaoFisicaService.create(avaliacaoFisicaDTO);
     }
 }
