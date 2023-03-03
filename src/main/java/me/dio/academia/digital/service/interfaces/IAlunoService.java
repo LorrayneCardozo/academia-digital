@@ -1,6 +1,7 @@
-package me.dio.academia.digital.service;
+package me.dio.academia.digital.service.interfaces;
 
 import me.dio.academia.digital.entity.Aluno;
+import me.dio.academia.digital.entity.AvaliacaoFisica;
 import me.dio.academia.digital.entity.dto.AlunoDTO;
 import me.dio.academia.digital.entity.dto.AlunoUpdateDTO;
 
@@ -41,4 +42,10 @@ public interface IAlunoService {
    * @param id - id do Aluno que será removido.
    */
   void delete(Long id);
+
+  /**
+   * Retorna todas as Avaliações Físicas de um determinado aluno.
+   * @return - Uma lista com as avaliações físicas de um aluno que estão salvas no DB.
+   */
+    List<AvaliacaoFisica> getAllAvaliacaoFisica(Long id);
 }

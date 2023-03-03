@@ -1,4 +1,4 @@
-package me.dio.academia.digital.service;
+package me.dio.academia.digital.service.interfaces;
 
 import me.dio.academia.digital.entity.Matricula;
 import me.dio.academia.digital.entity.dto.MatriculaDTO;
