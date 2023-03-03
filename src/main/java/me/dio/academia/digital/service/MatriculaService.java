@@ -8,8 +8,10 @@ import me.dio.academia.digital.repository.MatriculaRepository;
 import me.dio.academia.digital.service.interfaces.IMatriculaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class MatriculaService implements IMatriculaService {
@@ -33,11 +35,16 @@ public class MatriculaService implements IMatriculaService {
 
     @Override
     public Matricula get(Long id) {
-        return null;
+        return matriculaRepository.findById(id).get();
     }
 
     @Override
     public void delete(Long id) {
+        matriculaRepository.deleteById(id);
+    }
 
+    @Override
+    public List<Matricula> getByIdAluno(@PathVariable Long id) {
+        return matriculaRepository.findByAlunoId(id);
     }
 }

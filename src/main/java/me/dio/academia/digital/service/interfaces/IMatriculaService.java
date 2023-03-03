@@ -1,7 +1,9 @@
 package me.dio.academia.digital.service.interfaces;
 
+import me.dio.academia.digital.entity.Aluno;
 import me.dio.academia.digital.entity.Matricula;
 import me.dio.academia.digital.entity.dto.MatriculaDTO;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -31,5 +33,6 @@ public interface IMatriculaService {
    * @param id - id da Matrícula que será removida.
    */
   void delete(Long id);
+  List<Matricula> getByIdAluno(Long id);
 
 }
