@@ -32,12 +32,12 @@ public class AvaliacaoFisicaService implements IAvaliacaoFisicaService {
     }
 
     @Override
-    public AvaliacaoFisica get(Long id) {
-        return null;
+    public List<AvaliacaoFisica> getAll() {
+        return avaliacaoFisicaRepository.findAll();
     }
 
     @Override
-    public List<AvaliacaoFisica> getAll() {
+    public AvaliacaoFisica get(Long id) {
         return null;
     }
 
