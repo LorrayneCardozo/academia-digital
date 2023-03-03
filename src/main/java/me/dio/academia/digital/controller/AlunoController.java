@@ -30,16 +30,19 @@ public class AlunoController {
         return alunoService.getAll();
     }
 
+    @ApiOperation(value = "Retorna os dados de um aluno pelo ID")
     @GetMapping("/{id}")
     public Aluno getById(@PathVariable Long id) {
         return alunoService.get(id);
     }
 
+    @ApiOperation(value = "Atualiza os dados de um aluno pelo ID")
     @PutMapping("/{id}")
     public Aluno updateById(@PathVariable Long id, @RequestBody AlunoUpdateDTO alunoDTO){
         return alunoService.update(id, alunoDTO);
     }
 
+    @ApiOperation(value = "Exclui o cadastro de um aluno pelo ID")
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
         alunoService.delete(id);
